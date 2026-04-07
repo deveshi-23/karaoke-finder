@@ -1,2 +1,28 @@
-<div id="results"></div>
-<script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Finder</title>
+</head>
+<body>
+
+    <input type="text" id="searchInput" placeholder="Search karaoke..." />
+    <button onclick="handleSearch()">Search</button>
+
+    <br>
+
+    <button onclick="sortAZ()">Sort A–Z</button>
+    <button onclick="sortZA()">Sort Z–A</button>
+
+    <br>
+
+    <input type="text" id="filterInput" placeholder="Filter (e.g. female, acoustic)" />
+    <button onclick="applyFilter()">Apply Filter</button>
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

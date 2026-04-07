@@ -1,5 +1,5 @@
 const API_KEY = "AIzaSyCighfrqMYSuOMBZYyZFIGVazwrU1JewXo";
-
+let allVideos = [];
 async function searchKaraoke(query) {
 
     const container = document.getElementById("results");
@@ -10,7 +10,8 @@ async function searchKaraoke(query) {
     const response = await fetch(url);
     const data = await response.json();
 
-    displayVideos(data.items);;
+    allVideos = data.items;
+    displayVideos(allVideos);
   } catch (error) {
      
   const container = document.getElementById("results");
@@ -19,10 +20,6 @@ async function searchKaraoke(query) {
 
   }
 }
-
-searchKaraoke("believer imagine dragons");
-
-
 
 function displayVideos(videos) {
   const container = document.getElementById("results");
@@ -43,4 +40,34 @@ function displayVideos(videos) {
 
     container.appendChild(card);
   });
+}
+function applyFilter() {
+  const keyword = document.getElementById("filterInput").value.toLowerCase();
+
+  const filtered = allVideos.filter(video =>
+    video.snippet.title.toLowerCase().includes(keyword)
+  );
+
+  displayVideos(filtered);
+}
+
+function handleSearch() {
+  const query = document.getElementById("searchInput").value;
+  searchKaraoke(query);
+}
+
+function sortAZ() {
+  const sorted = [...allVideos].sort((a, b) =>
+    a.snippet.title.localeCompare(b.snippet.title)
+  );
+
+  displayVideos(sorted);
+}
+
+function sortZA() {
+  const sorted = [...allVideos].sort((a, b) =>
+    b.snippet.title.localeCompare(a.snippet.title)
+  );
+
+  displayVideos(sorted);
 }
