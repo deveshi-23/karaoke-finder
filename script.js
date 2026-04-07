@@ -1,10 +1,10 @@
-const API_KEY = "AIzaSyCighfrqMYSuOMBZYyZFIGVazwrU1JewXo";
+const APIKEY = process.env.API_KEY
 let allVideos = [];
 async function searchKaraoke(query) {
 
     const container = document.getElementById("results");
     container.innerHTML = "Loading...";
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}+karaoke&type=video&maxResults=5&key=${API_KEY}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}+karaoke&type=video&maxResults=5&key=${APIKEY}`;
 
     try {
     const response = await fetch(url);
