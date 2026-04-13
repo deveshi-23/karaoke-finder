@@ -1,4 +1,4 @@
-const APIKEY = process.env.API_KEY
+const APIKEY = 'AIzaSyCighfrqMYSuOMBZYyZFIGVazwrU1JewXo'
 let allVideos = [];
 async function searchKaraoke(query) {
 
