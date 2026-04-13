@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karaoke Finder</title>
 </head>
 <body>
+    <div class="controls">
 
-    <input type="text" id="searchInput" placeholder="Search karaoke..." />
-    <button onclick="handleSearch()">Search</button>
+    
 
-    <br>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search karaoke..." />
+        <button onclick="handleSearch()">Search</button>
+    </div>
+    
 
-    <button onclick="sortAZ()">Sort A–Z</button>
-    <button onclick="sortZA()">Sort Z–A</button>
+    <div class="filter-box">
+        <input type="text" id="filterInput" placeholder="Filter (e.g. female)" />
+        <button onclick="applyFilter()">Filter</button>
+    </div>
 
-    <br>
+    <div class="sort-box">
+        <button onclick="sortAZ()">A–Z</button>
+        <button onclick="sortZA()">Z–A</button>
+    </div>
 
-    <input type="text" id="filterInput" placeholder="Filter (e.g. female, acoustic)" />
-    <button onclick="applyFilter()">Apply Filter</button>
-
-    <div id="results"></div>
-
+    </div>
+    </div>
+    <div id="results" class="grid"></div>
+    
     <script src="script.js"></script>
     
 </body>
